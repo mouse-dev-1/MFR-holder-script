@@ -105,7 +105,8 @@ async function processBatch(batch) {
         // Combine token emissions data with contract status
         const dataWithTokenEmissionsAdded = data.map((holder, index) => {
             return {
-                tokens: parseInt(new BigNumber(holder.count).multipliedBy(100)),
+                ERC1155tokens: holder.count,
+                ERC20tokens: parseInt(new BigNumber(holder.count).multipliedBy(100)),
                 wallet: holder.holder.wallet.address,
                 isContract: contractStatuses[index] || false // Default to false if undefined
             };
