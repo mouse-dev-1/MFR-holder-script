@@ -42,11 +42,7 @@ const getPage = async (page, currentResults = []) => {
 
 
 (async () => {
-
     const holdersData = await getPage(0, []);
     console.log(holdersData)
     fs.writeFileSync(path.join(__dirname, "./rawData.json"), JSON.stringify(holdersData, undefined, 4));
-
-
-
 })();
